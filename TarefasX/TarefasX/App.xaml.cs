@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace TarefasX
 {
@@ -10,7 +8,7 @@ namespace TarefasX
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new TarefasX.Views.Main());
         }
 
         protected override void OnStart()
