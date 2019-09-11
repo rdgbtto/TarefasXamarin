@@ -14,19 +14,93 @@
             
             <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10" >
                 <StackLayout Orientation="Horizontal" Spacing="15" >
-                    <Image VerticalOptions="Center" />
+                    <Image VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="nochecked.png" />
+                                <On Platform="UWP" Value="Resources/nochecked.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                     <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Task 1" />
+                    <Image VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="1.png" />
+                                <On Platform="UWP" Value="Resources/1.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Image VerticalOptions="Center" HeightRequest="50" WidthRequest="50">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="lixeira.png" />
+                                <On Platform="UWP" Value="Resources/lixeira.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image VerticalOptions="Center" />
+                    <Image VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="checked.png" />
+                                <On Platform="UWP" Value="Resources/checked.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                     <StackLayout VerticalOptions="Center" Spacing="0" HorizontalOptions="FillAndExpand">
                         <Label Text="Task 1" TextColor="LightGray"/>
                         <Label Text="Finalizado em 99/99/9999" TextColor="LightGray" FontSize="10" />
                     </StackLayout>
+                    <Image VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="2.png" />
+                                <On Platform="UWP" Value="Resources/2.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Image VerticalOptions="Center" HeightRequest="50" WidthRequest="50">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="lixeira.png" />
+                                <On Platform="UWP" Value="Resources/lixeira.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="15" >
+                    <Image VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="nochecked.png" />
+                                <On Platform="UWP" Value="Resources/nochecked.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Task 1" />
+                    <Image VerticalOptions="Center" HeightRequest="20" WidthRequest="20">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="3.png" />
+                                <On Platform="UWP" Value="Resources/3.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Image VerticalOptions="Center" HeightRequest="50" WidthRequest="50">
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android" Value="lixeira.png" />
+                                <On Platform="UWP" Value="Resources/lixeira.png" />
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                 </StackLayout>
             </StackLayout>
-            <Button Text="Adicionar" HorizontalOptions="Center" Clicked="AdicionarTarefa" />
+            <Button Text="Adicionar" TextColor="White" BackgroundColor="Blue" FontSize="18" Padding="10" HorizontalOptions="Center" Clicked="AdicionarTarefa" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
