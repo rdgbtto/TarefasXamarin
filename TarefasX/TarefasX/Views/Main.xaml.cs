@@ -16,5 +16,10 @@ namespace TarefasX.Views
         {
             InitializeComponent();
         }
+
+        public void AdicionarTarefa(object sender, EventArgs args)
+        {
+            Navigation.PushAsync(new Register());
+        }
     }
 }

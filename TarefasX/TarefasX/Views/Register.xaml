@@ -7,9 +7,24 @@
              x:Class="TarefasX.Views.Register">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nome" FontAttributes="Bold"/>
+            <Entry x:Name="txtNome" />
+            <Label Text="Prioridade" FontAttributes="Bold"/>
+            <StackLayout x:Name="SLPrioridades">
+                <StackLayout Spacing="10">
+                    <Image />
+                    <Label Text="Urgente e importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Spacing="10">
+                    <Image />
+                    <Label Text="Importante mas não urgente" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Spacing="10">
+                    <Image />
+                    <Label Text="Sem prioridade" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="OK" TextColor="White" BackgroundColor="Blue" HorizontalOptions="End" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
