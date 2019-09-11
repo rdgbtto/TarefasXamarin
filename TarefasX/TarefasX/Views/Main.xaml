@@ -7,9 +7,26 @@
              x:Class="TarefasX.Views.Main">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout BackgroundColor="Blue" HeightRequest="250" >
+                <Label Text="Meu Dia" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" />
+                <Label Text="Terça, 10/09" HorizontalOptions="Start" VerticalOptions="End" TextColor="White" />
+            </StackLayout>
+            
+            <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10" >
+                <StackLayout Orientation="Horizontal" Spacing="15" >
+                    <Image VerticalOptions="Center" />
+                    <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand" Text="Task 1" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <Image VerticalOptions="Center" />
+                    <StackLayout VerticalOptions="Center" Spacing="0" HorizontalOptions="FillAndExpand">
+                        <Label Text="Task 1" TextColor="LightGray"/>
+                        <Label Text="Finalizado em 99/99/9999" TextColor="LightGray" FontSize="10" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="Adicionar" HorizontalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
