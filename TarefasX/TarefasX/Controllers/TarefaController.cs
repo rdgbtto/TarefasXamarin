@@ -9,12 +9,22 @@ namespace TarefasX.Controllers
 
         public void Salvar(Tarefa tarefa)
         {
+            if (tarefa.Nome == null || tarefa.Nome.Length <= 0)
+            {
+                throw new Exceptions.TarefasException("Tarefa sem nome");
+            }
+            if (tarefa.Prioridade <= 0)
+            {
+                throw new Exceptions.TarefasException("Tarefa sem prioridade");
+            }
+            Lista = ListarTarefas();
             Lista.Add(tarefa);
             AtualizarLista(Lista);
         }
 
         public void Finalizar(int index, Tarefa tarefa)
         {
+            Lista = ListarTarefas();
             Lista.RemoveAt(index);
             Lista.Add(tarefa);
             AtualizarLista(Lista);
@@ -22,6 +32,7 @@ namespace TarefasX.Controllers
 
         public void Deletar(Tarefa tarefa)
         {
+            Lista = ListarTarefas();
             Lista.Remove(tarefa);
             AtualizarLista(Lista);
         }
