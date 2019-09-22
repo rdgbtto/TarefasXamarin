@@ -9,7 +9,7 @@
         <StackLayout>
             <StackLayout BackgroundColor="Blue" HeightRequest="250" >
                 <Label Text="Meu Dia" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" />
-                <Label Text="Terça, 10/09" HorizontalOptions="Start" VerticalOptions="End" TextColor="White" />
+                <Label x:Name="Today" HorizontalOptions="Start" VerticalOptions="End" TextColor="White" />
             </StackLayout>
             
             <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10" >

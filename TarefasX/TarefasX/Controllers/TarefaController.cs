@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using TarefasX.Models;
 
 namespace TarefasX.Controllers
@@ -48,12 +49,22 @@ namespace TarefasX.Controllers
             {
                 App.Current.Properties.Remove("Tarefas");
             }
-            App.Current.Properties.Add("Tarefas", lista);
+
+            string jsonValue = JsonConvert.SerializeObject(lista);
+            App.Current.Properties.Add("Tarefas", jsonValue);
         }
 
         private List<Tarefa> BuscarLista()
         {
-            return App.Current.Properties.ContainsKey("Tarefas") ? (List<Tarefa>)App.Current.Properties["Tarefas"] : new List<Tarefa>();
+            if (App.Current.Properties.ContainsKey("Tarefas"))
+            {
+                string jsonValue = (string)App.Current.Properties["Tarefas"];
+
+                List<Tarefa> lista = JsonConvert.DeserializeObject<List<Tarefa>>(jsonValue);
+                return lista;
+            }
+
+            return new List<Tarefa>();
         }
     }
 }

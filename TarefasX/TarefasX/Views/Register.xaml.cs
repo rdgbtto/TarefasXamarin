@@ -44,8 +44,8 @@ namespace TarefasX.Views
                 tarefa.Prioridade = Prioridade;
 
                 new TarefaController().Salvar(tarefa);
-                // teste abaixo
-                DisplayAlert("Salvo com sucesso!", "Nome da tarefa: " + tarefa.Nome, "SAIR");
+
+                App.Current.MainPage = new NavigationPage(new Main());
             }
             catch (TarefasException e)
             {
