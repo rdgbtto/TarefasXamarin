@@ -40,16 +40,23 @@ namespace TarefasX.Views
 
         public void ListaStackLayout(Tarefa tarefa, int index)
         {
-            Image check = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("nochecked.png"), HeightRequest = 20, WidthRequest = 20 };
+            Image checkImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("nochecked.png"), HeightRequest = 20, WidthRequest = 20 };
             if (Device.RuntimePlatform == Device.UWP)
-                check.Source = ImageSource.FromFile("Resources/nochecked.png");
+                checkImage.Source = ImageSource.FromFile("Resources/nochecked.png");
+            if (tarefa.DataFinalizacao != null)
+            {
+                checkImage.Source = ImageSource.FromFile("checked.png");
+                checkImage.IsEnabled = false;
+                if (Device.RuntimePlatform == Device.UWP)
+                    checkImage.Source = ImageSource.FromFile("Resources/checked.png");
+            }   
             TapGestureRecognizer checkTap = new TapGestureRecognizer();
             checkTap.Tapped += delegate
             {
                 new TarefaController().Finalizar(index, tarefa);
                 CarregarTarefas();
             };
-            check.GestureRecognizers.Add(checkTap);
+            checkImage.GestureRecognizers.Add(checkTap); //checkImage
 
             View stackTarefa;
             if (tarefa.DataFinalizacao == null)
@@ -61,23 +68,23 @@ namespace TarefasX.Views
                 stackTarefa = new StackLayout() { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.FillAndExpand, Spacing = 0};
                 ((StackLayout)stackTarefa).Children.Add(new Label() { Text = tarefa.Nome, TextColor = Color.Gray });
                 ((StackLayout)stackTarefa).Children.Add(new Label() { Text = "Finalizado em " + tarefa.DataFinalizacao.Value.ToString("dd/MM/yyyy - hh:mm") + "hrs", TextColor = Color.Gray, FontSize = 10 });
-            }
+            } //stackTarefa
             
 
-            Image prioridade = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile(tarefa.Prioridade + ".png"), HeightRequest = 20, WidthRequest = 20 };
+            Image prioridadeImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile(tarefa.Prioridade + ".png"), HeightRequest = 20, WidthRequest = 20 };
             if (Device.RuntimePlatform == Device.UWP)
-                prioridade.Source = ImageSource.FromFile("Resources/" + tarefa.Prioridade + ".png");
+                prioridadeImage.Source = ImageSource.FromFile("Resources/" + tarefa.Prioridade + ".png"); //prioridadeImage
 
-            Image lixeira = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("lixeira.png"), HeightRequest = 50, WidthRequest = 50 };
+            Image lixeiraImage = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("lixeira.png"), HeightRequest = 50, WidthRequest = 50 };
             if (Device.RuntimePlatform == Device.UWP)
-                lixeira.Source = ImageSource.FromFile("Resources/lixeira.png");
+                lixeiraImage.Source = ImageSource.FromFile("Resources/lixeira.png");
             TapGestureRecognizer deleteTap = new TapGestureRecognizer();
             deleteTap.Tapped += delegate
             {
                 new TarefaController().Deletar(index);
                 CarregarTarefas();
             };
-            lixeira.GestureRecognizers.Add(deleteTap);
+            lixeiraImage.GestureRecognizers.Add(deleteTap); //lixeiraImage
 
             StackLayout linha = new StackLayout()
             {
@@ -85,10 +92,10 @@ namespace TarefasX.Views
                 Spacing = 15
             };
 
-            linha.Children.Add(check);
+            linha.Children.Add(checkImage);
             linha.Children.Add(stackTarefa);
-            linha.Children.Add(prioridade);
-            linha.Children.Add(lixeira);
+            linha.Children.Add(prioridadeImage);
+            linha.Children.Add(lixeiraImage);
 
             SLTarefas.Children.Add(linha);
         }
