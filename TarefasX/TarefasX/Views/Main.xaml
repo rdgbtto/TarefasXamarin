@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TarefasX.Views.Main">
+             x:Class="TarefasX.Views.Main"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="Blue" HeightRequest="250" >
+            <StackLayout BackgroundColor="#2196F3" HeightRequest="250" >
                 <Label Text="Meu Dia" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" />
                 <Label x:Name="Today" HorizontalOptions="Start" VerticalOptions="End" TextColor="White" />
             </StackLayout>

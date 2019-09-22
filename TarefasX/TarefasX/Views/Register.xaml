@@ -15,8 +15,8 @@
                     <Image HeightRequest="20" WidthRequest="20">
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android" Value="1.png" />
-                                <On Platform="UWP" Value="Resources/1.png" />
+                                <On Platform="Android" Value="p1.png" />
+                                <On Platform="UWP" Value="Resources/p1.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
@@ -29,8 +29,8 @@
                     <Image HeightRequest="20" WidthRequest="20">
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android" Value="2.png" />
-                                <On Platform="UWP" Value="Resources/2.png" />
+                                <On Platform="Android" Value="p2.png" />
+                                <On Platform="UWP" Value="Resources/p2.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
@@ -43,8 +43,8 @@
                     <Image HeightRequest="20" WidthRequest="20">
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android" Value="3.png" />
-                                <On Platform="UWP" Value="Resources/3.png" />
+                                <On Platform="Android" Value="p3.png" />
+                                <On Platform="UWP" Value="Resources/p3.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>

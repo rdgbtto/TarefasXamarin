@@ -8,6 +8,6 @@ namespace TarefasX.Models
     {
         public string Nome { get; set; }
         public DateTime? DataFinalizacao { get; set; }
-        public byte Prioridade { get; set; }
+        public string Prioridade { get; set; }
     }
 }

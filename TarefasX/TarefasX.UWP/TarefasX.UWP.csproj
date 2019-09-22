@@ -131,12 +131,36 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Resources\1.png" />
-    <Content Include="Resources\2.png" />
-    <Content Include="Resources\3.png" />
-    <Content Include="Resources\checked.png" />
-    <Content Include="Resources\lixeira.png" />
-    <Content Include="Resources\nochecked.png" />
+    <Content Include="Resources\checked.scale-100.png" />
+    <Content Include="Resources\checked.scale-125.png" />
+    <Content Include="Resources\checked.scale-150.png" />
+    <Content Include="Resources\checked.scale-200.png" />
+    <Content Include="Resources\checked.scale-400.png" />
+    <Content Include="Resources\lixeira.scale-100.png" />
+    <Content Include="Resources\lixeira.scale-125.png" />
+    <Content Include="Resources\lixeira.scale-150.png" />
+    <Content Include="Resources\lixeira.scale-200.png" />
+    <Content Include="Resources\lixeira.scale-400.png" />
+    <Content Include="Resources\nochecked.scale-100.png" />
+    <Content Include="Resources\nochecked.scale-125.png" />
+    <Content Include="Resources\nochecked.scale-150.png" />
+    <Content Include="Resources\nochecked.scale-200.png" />
+    <Content Include="Resources\nochecked.scale-400.png" />
+    <Content Include="Resources\p1.scale-100.png" />
+    <Content Include="Resources\p1.scale-125.png" />
+    <Content Include="Resources\p1.scale-150.png" />
+    <Content Include="Resources\p1.scale-200.png" />
+    <Content Include="Resources\p1.scale-400.png" />
+    <Content Include="Resources\p2.scale-100.png" />
+    <Content Include="Resources\p2.scale-125.png" />
+    <Content Include="Resources\p2.scale-150.png" />
+    <Content Include="Resources\p2.scale-200.png" />
+    <Content Include="Resources\p2.scale-400.png" />
+    <Content Include="Resources\p3.scale-100.png" />
+    <Content Include="Resources\p3.scale-125.png" />
+    <Content Include="Resources\p3.scale-150.png" />
+    <Content Include="Resources\p3.scale-200.png" />
+    <Content Include="Resources\p3.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -159,6 +183,7 @@
       <Name>TarefasX</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

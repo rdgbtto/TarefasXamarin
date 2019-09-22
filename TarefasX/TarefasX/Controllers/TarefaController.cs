@@ -15,7 +15,7 @@ namespace TarefasX.Controllers
             {
                 throw new Exceptions.TarefasException("Tarefa sem nome");
             }
-            if (tarefa.Prioridade <= 0)
+            if (tarefa.Prioridade.Length <= 0)
             {
                 throw new Exceptions.TarefasException("Tarefa sem prioridade");
             }

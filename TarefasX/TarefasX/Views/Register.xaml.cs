@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TarefasX.Controllers;
 using TarefasX.Controllers.Exceptions;
 using TarefasX.Models;
@@ -14,7 +10,7 @@ namespace TarefasX.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Register : ContentPage
     {
-        private byte Prioridade { get; set; }
+        private string Prioridade { get; set; }
         public Register()
         {
             InitializeComponent();
@@ -32,7 +28,8 @@ namespace TarefasX.Views
 
             ((Label)((StackLayout)sender).Children[1]).TextColor = Color.Black;
             FileImageSource source = ((Image)((StackLayout)sender).Children[0]).Source as FileImageSource;
-            Prioridade = byte.Parse(source.ToString().Replace("File: Resources/", "").Replace(".png", ""));
+            string prioridade = source.ToString().Replace("File: Resources/", "").Replace(".png", "");
+            Prioridade = prioridade;
         }
 
         public void SalvarAction(object sender, EventArgs args)

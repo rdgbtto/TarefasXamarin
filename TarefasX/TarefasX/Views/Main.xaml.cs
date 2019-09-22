@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using TarefasX.Controllers;
 using TarefasX.Models;
 using Xamarin.Forms;
@@ -17,7 +15,9 @@ namespace TarefasX.Views
         {
             InitializeComponent();
 
-            Today.Text = DateTime.Now.DayOfWeek.ToString() + ", " + DateTime.Now.ToString("dd/MM");
+            CultureInfo culture = new CultureInfo("pt-BR");
+            string date = DateTime.Now.ToString("dddd, dd {0} MMMM {0} yyyy", culture);
+            Today.Text = string.Format(date, "de");
             CarregarTarefas();
         }
 
@@ -67,7 +67,7 @@ namespace TarefasX.Views
             {
                 stackTarefa = new StackLayout() { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.FillAndExpand, Spacing = 0};
                 ((StackLayout)stackTarefa).Children.Add(new Label() { Text = tarefa.Nome, TextColor = Color.Gray });
-                ((StackLayout)stackTarefa).Children.Add(new Label() { Text = "Finalizado em " + tarefa.DataFinalizacao.Value.ToString("dd/MM/yyyy - hh:mm") + "hrs", TextColor = Color.Gray, FontSize = 10 });
+                ((StackLayout)stackTarefa).Children.Add(new Label() { Text = "Finalizado em " + tarefa.DataFinalizacao.Value.ToString("dd/MM/yyyy - HH:mm") + "hrs", TextColor = Color.Gray, FontSize = 10 });
             } //stackTarefa
             
 
@@ -98,11 +98,6 @@ namespace TarefasX.Views
             linha.Children.Add(lixeiraImage);
 
             SLTarefas.Children.Add(linha);
-        }
-
-        private void DeleteTap_Tapped(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }
