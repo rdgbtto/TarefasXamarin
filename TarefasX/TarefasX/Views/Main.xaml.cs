@@ -30,17 +30,26 @@ namespace TarefasX.Views
         {
             SLTarefas.Children.Clear();
             List<Tarefa> lista = new TarefaController().ListarTarefas();
+            int i = 0;
             foreach (Tarefa tarefa in lista)
             {
-                ListaStackLayout(tarefa);
+                ListaStackLayout(tarefa, i);
+                i++;
             }
         }
 
-        public void ListaStackLayout(Tarefa tarefa)
+        public void ListaStackLayout(Tarefa tarefa, int index)
         {
             Image check = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("nochecked.png"), HeightRequest = 20, WidthRequest = 20 };
             if (Device.RuntimePlatform == Device.UWP)
                 check.Source = ImageSource.FromFile("Resources/nochecked.png");
+            TapGestureRecognizer checkTap = new TapGestureRecognizer();
+            checkTap.Tapped += delegate
+            {
+                new TarefaController().Finalizar(index, tarefa);
+                CarregarTarefas();
+            };
+            check.GestureRecognizers.Add(checkTap);
 
             View stackTarefa;
             if (tarefa.DataFinalizacao == null)
@@ -62,6 +71,13 @@ namespace TarefasX.Views
             Image lixeira = new Image() { VerticalOptions = LayoutOptions.Center, Source = ImageSource.FromFile("lixeira.png"), HeightRequest = 50, WidthRequest = 50 };
             if (Device.RuntimePlatform == Device.UWP)
                 lixeira.Source = ImageSource.FromFile("Resources/lixeira.png");
+            TapGestureRecognizer deleteTap = new TapGestureRecognizer();
+            deleteTap.Tapped += delegate
+            {
+                new TarefaController().Deletar(index);
+                CarregarTarefas();
+            };
+            lixeira.GestureRecognizers.Add(deleteTap);
 
             StackLayout linha = new StackLayout()
             {
@@ -75,6 +91,11 @@ namespace TarefasX.Views
             linha.Children.Add(lixeira);
 
             SLTarefas.Children.Add(linha);
+        }
+
+        private void DeleteTap_Tapped(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

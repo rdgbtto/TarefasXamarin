@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using TarefasX.Models;
 
@@ -27,14 +28,15 @@ namespace TarefasX.Controllers
         {
             Lista = ListarTarefas();
             Lista.RemoveAt(index);
+            tarefa.DataFinalizacao = DateTime.Now;
             Lista.Add(tarefa);
             AtualizarLista(Lista);
         }
 
-        public void Deletar(Tarefa tarefa)
+        public void Deletar(int index)
         {
             Lista = ListarTarefas();
-            Lista.Remove(tarefa);
+            Lista.RemoveAt(index);
             AtualizarLista(Lista);
         }
 
