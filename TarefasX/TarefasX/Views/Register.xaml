@@ -20,29 +20,38 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Urgente e importante" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Urgente e importante" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Image HeightRequest="20" WidthRequest="20">
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android" Value="1.png" />
-                                <On Platform="UWP" Value="Resources/1.png" />
+                                <On Platform="Android" Value="2.png" />
+                                <On Platform="UWP" Value="Resources/2.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Importante mas não urgente" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Importante mas não urgente" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Image HeightRequest="20" WidthRequest="20">
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
-                                <On Platform="Android" Value="1.png" />
-                                <On Platform="UWP" Value="Resources/1.png" />
+                                <On Platform="Android" Value="3.png" />
+                                <On Platform="UWP" Value="Resources/3.png" />
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Sem prioridade" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Sem prioridade" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction" />
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
             </StackLayout>
             <Button Text="OK" TextColor="White" BackgroundColor="Blue" FontSize="18" Padding="10" HorizontalOptions="End" />
